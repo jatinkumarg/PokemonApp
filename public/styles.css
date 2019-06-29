@@ -4,15 +4,18 @@
 
 body, html {
     margin:0;
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
 	font-family: Aldrich; 
     font-size: 15px;
+    background-image: url('https://i.ibb.co/Tw31fBm/yellow.jpg');
+    background-size:  100% 100%;;
+
 }
 
 .container {
     max-width: 1024px;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(7, 7, 7);
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +31,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 30%;
 }
 
 .cardSection:first-of-type {

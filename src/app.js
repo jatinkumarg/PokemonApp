@@ -4,8 +4,10 @@ import PokemonList from "./constants/pokemonList";
 import PokemonTypesMap from "./constants/pokemonTypes";
 import PokemonPicker from "./components/pokemonPicker";
 import PokemonCard from "./components/pokemonCard";
-
-export default class App extends Component {
+//https://i.ibb.co/fH9BfTJ/bg.jpg
+//https://i.ibb.co/kghC6pG/yyy.jpg
+//https://i.ibb.co/Tw31fBm/yellow.jpg
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,29 +29,46 @@ export default class App extends Component {
   }
 
   render() {
+    const headstyle = {
+      color: "white",
+      fontSize: 40
+    };
+    const substyle = {
+        color: "white",
+        fontSize: 25
+      };
+    const mainstyle = {
+        textAlign: "center"
+      };
     return (
-      <div className="container">
-        <section className="cardSection">
-          <PokemonPicker
-            id="pokemonOne"
-            handleChange={this.handleChange}
-            list={PokemonList}
-            choice={this.state.PokemonOne}
-          />
-          <PokemonCard pokemon={this.state.PokemonOneData} />
-        </section>
-        <section className="cardSection">
-          <PokemonPicker
-            id="pokemonTwo"
-            handleChange={this.handleChange}
-            list={PokemonList}
-            choice={this.state.PokemonTwo}
-          />
-          <PokemonCard
-            pokemon={this.state.PokemonTwoData}
-            vs={this.state.PokemonOneData}
-          />
-        </section>
+      <div style={mainstyle}>
+        <div className="body">
+          <h1 style={headstyle}>Pokedex</h1>
+          <h3 style={substyle}>You very own pokemon catalog and pokemon</h3>
+        </div>
+        <div >
+          <section className="cardSection">
+            <PokemonPicker
+              id="pokemonOne"
+              handleChange={this.handleChange}
+              list={PokemonList}
+              choice={this.state.PokemonOne}
+            />
+            <PokemonCard pokemon={this.state.PokemonOneData} />
+          </section>
+          <section className="cardSection">
+            <PokemonPicker
+              id="pokemonTwo"
+              handleChange={this.handleChange}
+              list={PokemonList}
+              choice={this.state.PokemonTwo}
+            />
+            <PokemonCard
+              pokemon={this.state.PokemonTwoData}
+              vs={this.state.PokemonOneData}
+            />
+          </section>
+        </div>
       </div>
     );
   }
@@ -81,3 +100,4 @@ export default class App extends Component {
     return axios.get(this.pokeAPI.host + `pokemon/${id}`);
   }
 }
+export default App;
