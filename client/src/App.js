@@ -30,23 +30,32 @@ class App extends Component {
 
   render() {
     const headstyle = {
-      color: "white",
-      fontSize: 40
-    };
+      color: '#1c0502',
+      fontFamily: 'ITC Benguiat W01',
+      textTransform: 'uppercase',
+      fontSize: 60,
+      marginTop: 4,
+      textShadow: '-0.05rem -0.05rem 1px #ed2b12,0.05rem -0.05rem 1px #ed2b12,-0.05rem 0.05rem 1px #ed2b12,0.05rem 0.05rem 1px #ed2b12,0 0 15px #630100,0 0 20px #450100',
+      letterSpacing: '-2px'
+        };
     const substyle = {
-        color: "white",
-        fontSize: 25
-      };
+      color: "#FFFF66",
+      fontSize: 20,
+      marginTop: -35
+    };
     const mainstyle = {
-        textAlign: "center"
-      };
+      textAlign: "center"
+    };
+    const cardstyle = {
+      marginTop: -20
+    };
     return (
       <div style={mainstyle}>
         <div className="body">
           <h1 style={headstyle}>Pokedex</h1>
-          <h3 style={substyle}>You very own pokemon catalog and pokemon</h3>
+          <h3 style={substyle}>Your very own pokemon comparer app</h3>
         </div>
-        <div >
+        <div style={cardstyle}>
           <section className="cardSection">
             <PokemonPicker
               id="pokemonOne"
